@@ -9,9 +9,9 @@ OBJS := ${SOURCE:.c=.o}
 all: compile clean
 
 .c.o:
-	$(CC) $(GCC-FLAGS-SIMD) -c -g -o $@ $<  
+	$(CC) $(GCC-FLAGS) -c -g -o $@ $<
 compile: $(OBJS)
-	$(CC) $(GCC-FLAGS-SIMD)    -o $(OUTPUTDIR)/$(TARGET) $(OBJS)
-	$(CC) $(GCC-FLAGS-SIMD) -g -o $(OUTPUTDIR)/$(TARGET)-debug $(OBJS)
+	$(CC) $(GCC-FLAGS)    -o $(OUTPUTDIR)/$(TARGET) $(OBJS)
+	$(CC) $(GCC-FLAGS) -g -o $(OUTPUTDIR)/$(TARGET)-debug $(OBJS)
 clean:
 	rm -r src/*.o
