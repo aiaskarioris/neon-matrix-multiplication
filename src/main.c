@@ -30,7 +30,7 @@ int main(int argc, char **argv) {
   testResults_t	results;
 
   size_t dims_to_test[] = {16, 32, 48};
-  for(uint8_t didx = 0; didx < 6; didx++ ){
+  for(uint8_t didx = 0; didx < 3; didx++ ){
     dim = dims_to_test[didx];
     elementCount = dim*dim;
 
@@ -75,7 +75,7 @@ int main(int argc, char **argv) {
   }
 
 
-  printf("                                       Speed-Up\n"); printf("   Dimensions |");
+  printf("                             Speed-Up\n"); printf("   Dimensions |");
   for(uint8_t i = 0; i < benchmarkTestCount; i++) { printf(" %3dx%3d |", benchmarkDimension[i], benchmarkDimension[i]); }
   printf("\n 32-Bit Float |");
   for(uint8_t i = 0; i < benchmarkTestCount; i++) { printf(" 0%3.2f   |", benchmarkSpeedUp[i*4]); }
@@ -87,8 +87,8 @@ int main(int argc, char **argv) {
   for(uint8_t i = 0; i < benchmarkTestCount; i++) { printf(" %3.2f   |", benchmarkSpeedUp[i*4+3]); }
 
 
-  printf("\n\n                              Exec. Time / Iteration (us)\n"); printf("   Dimensions |");
-  for(uint8_t i = 0; i < benchmarkTestCount; i++) { printf(" %3dx%3d\t|", benchmarkDimension[i], benchmarkDimension[i]); }
+  printf("\n\n                    Exec. Time / Iteration (us)\n"); printf("   Dimensions |");
+  for(uint8_t i = 0; i < benchmarkTestCount; i++) { printf(" %2dx%2d\t|", benchmarkDimension[i], benchmarkDimension[i]); }
   printf("\n 32-Bit Float |");
   for(uint8_t i = 0; i < benchmarkTestCount; i++) { printf(" %3.2f\t|", benchmarkUSPerIt[i*4]); }
   printf("\n 32-Bit Int   |");
